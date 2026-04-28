@@ -1,11 +1,8 @@
-.logs_tasks_wrapper {
+.logs_steps_wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
-}
-
-.task_wrapper {
 }
 
 .logs {
