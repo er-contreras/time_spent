@@ -14,20 +14,26 @@
 </head>
 
 <body>
-    <div class="outpost-terminal">
-        <div class="terminal-header">
-            <span class="title">outpost-7 :: System Logs</span>
-            <span class="info"></span>
+  <div class="outpost-terminal">
+    <div class="terminal-header">
+      <span class="title">outpost-7 :: System Logs</span>
+      <span class="info"></span>
+    </div>
+
+    <div class="terminal-body">
+      <div class="system-meta">
+        <p>OBJECTIVE: build_project_planning_v1</p>
+        <p>ESTIMATE: <span id="countdown" class="status-active">30D 00H 00M 00S</span></p>
+        <p>STATUS: <span class="status-active">[active]</span></p>
+        <p>PROGRESS: <span class="ascii-progress">30%</span></p>
+      </div>
+
+      <div class="logs_tasks_wrapper">
+        <div class="tasks_wrapper">
+          <div class="tasks"></div>
         </div>
 
-        <div class="terminal-body">
-          <div class="system-meta">
-            <p>LOCATION: sektor-7 / sector_control</p>
-            <p>RUNTIME: 0d 14h 52m 10s</p>
-            <p>STATUS: <span class="status-active">[active] (Pulsing_red)</span></p>
-            <p>SYSTEM_LOAD: <span class="ascii-progress"> 47%</span></p>
-          </div>
-
+        <div class="logs">
           <div class="log-entry info">
             <span class="log-timestamp">[13:01:22]</span>
             <span class="log-event">[INFO] Sensor array initialized.</span>
@@ -58,11 +64,14 @@
             <span class="log-event">[LOG] Task "read_book1" suspended due to keyboard_maintenance.</span>
           </div>
         </div>
-
-        <div class="terminal-input">
-            <span class="user">outpost_commander</span><span class="prompt">::>$</span> 
-            cat habitat_status.log
-        </div>
+      </div>
     </div>
+
+    <div class="terminal-input">
+      <span class="user">outpost_commander</span><span class="prompt">::>$</span>
+      cat habitat_status.log
+    </div>
+  </div>
 </body>
+
 </html>
