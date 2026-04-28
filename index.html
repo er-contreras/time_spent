@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outpost Terminal 7 - Logs</title>
+
+    <link rel="stylesheet" href="styles/style.css"> 
+
+    <script defer src="scripts/taskDisplayed.js"></script>
+    <script defer src="scripts/currentDate.js"></script>
+</head>
+<body>
+    <div class="outpost-terminal">
+        <div class="terminal-header">
+            <span class="title">outpost-7 :: System Logs</span>
+            <span class="info"></span>
+        </div>
+
+        <div class="terminal-body">
+          <div class="system-meta">
+            <p>LOCATION: sektor-7 / sector_control</p>
+            <p>RUNTIME: 0d 14h 52m 10s</p>
+            <p>STATUS: <span class="status-active">[active] (Pulsing_red)</span></p>
+            <p>SYSTEM_LOAD: <span class="ascii-progress"> 47%</span></p>
+          </div>
+
+          <div class="log-entry info">
+            <span class="log-timestamp">[13:01:22]</span>
+            <span class="log-event">[INFO] Sensor array initialized.</span>
+          </div>
+
+          <div class="log-entry">
+            <span class="log-timestamp">[13:01:45]</span>
+            <span class="log-event">[LOG] Sector 4 power grid: stabilizing...</span>
+          </div>
+
+          <div class="log-entry">
+            <span class="log-timestamp">[13:02:10]</span>
+            <span class="log-event">[LOG] File stream accessed: ercntreras_hab_monitoring.</span>
+          </div>
+
+          <div class="log-entry critical">
+            <span class="log-timestamp">[13:02:30]</span>
+            <span class="log-event">[ERROR] UNEXPECTED_STRING detected in habitat_data. (CRITICAL)</span>
+          </div>
+
+          <div class="log-entry info">
+            <span class="log-timestamp">[13:02:45]</span>
+            <span class="log-event">[INFO] Cleaning protocol 7 initiated (H2O_flush).</span>
+          </div>
+
+          <div class="log-entry">
+            <span class="log-timestamp">[13:02:50]</span>
+            <span class="log-event">[LOG] Task "read_book1" suspended due to keyboard_maintenance.</span>
+          </div>
+        </div>
+
+        <div class="terminal-input">
+            <span class="user">outpost_commander</span><span class="prompt">::>$</span> 
+            cat habitat_status.log
+        </div>
+    </div>
+</body>
+</html>

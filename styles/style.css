@@ -1,0 +1,141 @@
+/*
+  HANDMADE TERMINAL CSS
+  Focus: Speed, Minimalist, Data-First
+*/
+
+/* Reset & Core Aesthetics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a; /* Very Dark Gray */
+    color: #f2f2f2;           /* Near White */
+    font-family: 'Courier New', Courier, monospace; /* Classic Monospace */
+    font-size: 14px;
+    line-height: 1.5;
+    height: 100vh;
+    overflow: hidden;         /* No scrollbars, use container scrolling */
+}
+
+/* The Main Terminal Container */
+.outpost-terminal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333; /* Dark Gray Border */
+    background-color: #0d0d0d; /* Pure Dark for the screen */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Header Bar */
+.terminal-header {
+    padding: 8px 16px;
+    background-color: #333;
+    border-bottom: 2px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-header .title {
+    color: #cc3333; /* Critical Red */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.terminal-header .title::before {
+    content: "[•] "; /* ASCII-style status indicator */
+}
+
+.terminal-header .info {
+    color: #999; /* Medium Gray */
+}
+
+/* The Log Content Area */
+.terminal-body {
+    flex-grow: 1;
+    padding: 16px;
+    overflow-y: auto; /* Allow vertical scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling the specific data points */
+.log-entry {
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 4px 0;
+}
+
+/* The white data */
+.log-timestamp {
+    color: #f2f2f2; 
+    width: 90px;
+}
+
+.log-event {
+    color: #b3b3b3; /* Lighter Gray for main text */
+    flex-grow: 1;
+}
+
+/* Red for critical/alert info */
+.log-entry.critical .log-event {
+    color: #ff3333; /* Red text for entire line */
+}
+
+.log-entry.info .log-event {
+    color: #f2f2f2; /* White text for info lines */
+}
+
+/* Red bolding for status words */
+.status-active {
+    color: #ff3333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* System Info Section at the top of the body */
+.system-meta {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: #999;
+}
+
+/* ASCII Progress Bar */
+.ascii-progress::before {
+    content: "[|||||.....]"; /* Static representation */
+    color: #ff3333;
+}
+
+/* User Input Prompt */
+.terminal-input {
+    padding: 8px 16px;
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    color: #f2f2f2;
+}
+
+.terminal-input .prompt {
+    color: #cc3333; /* Red for the prompt char */
+}
+
+.terminal-input::after {
+    content: "█"; /* ASCII Cursor block */
+    color: #ff3333;
+    animation: blink 1.2s infinite;
+}
+
+/* Minimal Animation for the cursor */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+
